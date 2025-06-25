@@ -15,11 +15,43 @@ document.addEventListener("keydown", (e) => {
 // Create turtles at random positions and move them up with one caption each
 
 const turtleTexts = [
-  "I'm fast!",
-  "Watch me go!",
-  "Slow and steady!",
-  "Zoom!",
-  "Turtle power!"
+  "We are video game turtles !",
+  "Let us present our many ancestors:",
+  "Bunch'of user functions",
+  "Library functions",
+  "System call functions",
+  "Assembly instructions",
+  "Binary instructions",
+  "CPU executing them",
+  "ALU",
+  "Circuits",
+  "Logic gates",
+  "Transistors",
+  "Silicon",
+  "Crystal structure",
+  "Silicon atoms",
+  "Silicon nucleus",
+  "Nucleons",
+  "Quarks",
+  "Wavefunctions",
+  "Quantum fields",
+  "Field of quantum operators",
+  "Quantum operators",
+  "Complex vectors",
+  "Complex numbers",
+  "Real numbers",
+  "Dedekind cuts",
+  "Rational numbers",
+  "This is becoming long",
+  "Integers",
+  "Natural numbers",
+  "Von Neumann ordinals",
+  "3 = {2,1,0}",
+  "2 = {1,0}",
+  "1 = {0}",
+  "0 = {}",
+  "Nothing",
+  
 ];
 let textIndex = 0;
 
@@ -43,7 +75,7 @@ function createTurtle() {
 
   let turtleTop = window.innerHeight;
   const move = setInterval(() => {
-    turtleTop -= 2;
+    turtleTop -= 1;
     turtle.style.top = turtleTop + "px";
     caption.style.top = turtleTop - 20 + "px";
     caption.style.left = turtle.style.left;
@@ -73,7 +105,7 @@ function createTurtle() {
 
 playBtn.onclick = () => {
   message.textContent = "";
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 36; i++) {
     setTimeout(createTurtle, i * 1000);
   }
 };
