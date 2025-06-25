@@ -59,7 +59,7 @@ function createTurtle() {
   const turtle = document.createElement("img");
   turtle.src = "turtle.png"; // replace with your image file name
   turtle.classList.add("turtle");
-  turtle.style.left = Math.random() * (window.innerWidth - 40) + "px";
+  turtle.style.left = Math.random() * (window.innerWidth - 80) + "px";
   turtle.style.top = window.innerHeight + "px";
   document.body.appendChild(turtle);
 
@@ -81,7 +81,7 @@ function createTurtle() {
     caption.style.left = turtle.style.left;
 
 
-    if (turtleTop < -100) {
+    if (turtleTop < -40) {
       clearInterval(move);
       turtle.remove();
       caption.remove();
@@ -106,7 +106,7 @@ function createTurtle() {
 playBtn.onclick = () => {
   message.textContent = "";
   for (let i = 0; i < 36; i++) {
-    setTimeout(createTurtle, i * 1000);
+    setTimeout(createTurtle, i * 3000);
   }
 };
 
