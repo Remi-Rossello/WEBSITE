@@ -73,8 +73,8 @@ function createTurtle() {
 
 playBtn.onclick = () => {
   message.textContent = "";
-  for (let i = 0; i < 60; i++) {
-    setTimeout(createTurtle, i * 500);
+  for (let i = 0; i < 3; i++) {
+    setTimeout(createTurtle, i * 1000);
   }
 };
 
