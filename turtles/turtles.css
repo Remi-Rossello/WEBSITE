@@ -3,7 +3,7 @@ body {
   background: black;
   overflow: hidden;
   font-family: sans-serif;
-  font-color: light-blue;
+  color: light-blue;
 }
 
 #player {
