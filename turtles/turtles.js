@@ -12,7 +12,17 @@ document.addEventListener("keydown", (e) => {
   player.style.left = position + "px";
 });
 
-// Create turtles at random positions and move them up
+// Create turtles at random positions and move them up with one caption each
+
+const turtleTexts = [
+  "I'm fast!",
+  "Watch me go!",
+  "Slow and steady!",
+  "Zoom!",
+  "Turtle power!"
+];
+let textIndex = 0;
+
 function createTurtle() {
   const turtle = document.createElement("img");
   turtle.src = "turtle.png"; // replace with your image file name
@@ -21,14 +31,28 @@ function createTurtle() {
   turtle.style.top = window.innerHeight + "px";
   document.body.appendChild(turtle);
 
+  const caption = document.createElement("div");
+  caption.textContent = turtleTexts[textIndex % turtleTexts.length];
+  caption.style.position = "absolute";
+  caption.style.fontSize = "14px";
+  caption.style.color = "lightblue";
+  caption.style.top = turtle.style.top;
+  caption.style.left = turtle.style.left;
+  document.body.appendChild(caption);
+  textIndex++;
+
   let turtleTop = window.innerHeight;
   const move = setInterval(() => {
     turtleTop -= 2;
     turtle.style.top = turtleTop + "px";
+    caption.style.top = turtleTop - 20 + "px";
+    caption.style.left = turtle.style.left;
 
-    if (turtleTop < -40) {
+
+    if (turtleTop < -100) {
       clearInterval(move);
       turtle.remove();
+      caption.remove();
     }
 
     // Collision detection
@@ -49,7 +73,11 @@ function createTurtle() {
 
 playBtn.onclick = () => {
   message.textContent = "";
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 60; i++) {
     setTimeout(createTurtle, i * 500);
   }
 };
+
+
+
+
