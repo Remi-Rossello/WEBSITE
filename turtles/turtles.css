@@ -1,14 +1,30 @@
 body {
-  background: #0b0c21;
-  color: #ddd;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  overflow: hidden;
+  background: #eef;
+  font-family: sans-serif;
 }
 
-  #player {
-    position: absolute;
-    top: 100px;
-    left: 0;
-    width: 50px;
-    height: 50px;
-    background: green;
-  }
+#player {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: green;
+}
+
+.turtle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+
+#message {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  color: red;
+}
