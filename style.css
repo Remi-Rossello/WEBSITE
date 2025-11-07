@@ -2,7 +2,6 @@ body {
   background: skyblue;
   color: black;
   font-family: Arial, sans-serif;
-  align-content: center;
   text-align: center;
   padding: 50px;
 }
@@ -23,7 +22,7 @@ body {
   flex: 1 1 calc(30% - 10px);
   text-align: center;
   padding: 20px;
-  border-radius: 25%;
+  border-radius: 8px;
   transition: background 0.2s;
 }
 
