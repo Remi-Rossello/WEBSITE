@@ -1,0 +1,41 @@
+body {
+    background: skyblue;
+    color: black;
+    font-family: 'Arial', sans-serif;
+    margin: 40px;
+    text-align: center;
+}
+
+details {
+  background: #1e293b;
+  color: #e2e8f0;
+  border-radius: 8px;
+  margin: 8px 0;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+details[open] {
+  background: #334155;
+}
+
+summary {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+summary::marker {
+  display: none; /* hide default triangle */
+}
+
+summary::after {
+  content: '›';
+  transition: transform 0.2s;
+}
+
+details[open] summary::after {
+  transform: rotate(90deg);
+}
