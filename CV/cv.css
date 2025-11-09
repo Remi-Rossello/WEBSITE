@@ -4,16 +4,17 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 40px;
     text-align: center;
+    justify-content: center;
 }
 
 .cv-box {
-  display: flex;
-  justify-content: center;
   width: 50vw;
+
   border-color: black;
   border-style: solid;
   border-width: 2px;
   border-radius: 8px;
+  
   background-color: whitesmoke;
   padding: 20px;
   margin: 20px 0;
