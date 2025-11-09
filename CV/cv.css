@@ -6,6 +6,17 @@ body {
     text-align: center;
 }
 
+.cv-box {
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 8px;
+  background-color: whitesmoke;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 details {
   background: #1e293b;
   color: #e2e8f0;
