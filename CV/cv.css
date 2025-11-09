@@ -7,7 +7,7 @@ body {
 }
 
 .cv-box {
-  max-width: 500px;
+  width: 50vw;
   border-color: black;
   border-style: solid;
   border-width: 2px;
