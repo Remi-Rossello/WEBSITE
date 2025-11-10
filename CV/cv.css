@@ -1,14 +1,20 @@
 body {
-    background: yellow;
+    background: skyblue;
     color: black;
     font-family: 'Arial', sans-serif;
     margin: 40px;
 }
 
+#title {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
 .flex-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
 .cv-box {
@@ -57,4 +63,8 @@ summary::after {
 
 details[open] summary::after {
   transform: rotate(90deg);
+}
+
+details:hover {
+  color: lightcoral;
 }
