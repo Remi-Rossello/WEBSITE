@@ -43,7 +43,7 @@ summary {
 }
 
 details:hover {
-  font-size: larger;
+  background: darkcyan;
 }
 
 details summary::after {
