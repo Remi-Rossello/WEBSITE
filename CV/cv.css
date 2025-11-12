@@ -1,6 +1,6 @@
 body {
-    background: skyblue;
-    color: black;
+    background: darkslategray;
+    color: honeydew;
     font-family: 'Arial', sans-serif;
     margin: 40px;
 }
@@ -19,30 +19,20 @@ body {
 
 .cv-box {
   width: 50vw;
-
-  border-color: black;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 8px;
-
-  background-color: whitesmoke;
+  border-radius: 16px;
+  background-color: teal;
   padding: 20px;
   margin: 20px 0;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 details {
-  background: #1e293b;
-  color: #e2e8f0;
+  background: cadetblue;
+  color: honeydew;
   border-radius: 8px;
   margin: 8px;
   padding: 12px;
   cursor: pointer;
-  transition: background 0.2s;
-}
-
-details[open] {
-  background: #334155;
 }
 
 summary {
@@ -52,19 +42,15 @@ summary {
   align-items: center;
 }
 
-summary::marker {
-  display: none; /* hide default triangle */
+details:hover {
+  font-size: larger;
 }
 
-summary::after {
-  content: '›';
-  transition: transform 0.2s;
+details summary::after {
+  content: '▸';          /* triangle */
+  transition: transform 0.3s ease;
 }
 
 details[open] summary::after {
-  transform: rotate(90deg);
-}
-
-details:hover {
-  color: lightcoral;
+  transform: rotate(90deg); /* tourne quand ouvert */
 }

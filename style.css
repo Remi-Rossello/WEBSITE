@@ -1,24 +1,25 @@
 body {
-  background: skyblue;
-  color: black;
+  background: saddlebrown;
+  color: ivory;
   font-family: Arial, sans-serif;
   text-align: center;
   padding: 50px;
 }
+
 
 .grid {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  background-color: grey;
+  background-color: peru;
   border-radius: 8px;
   padding: 30px
 }
 
 .cell {
-  background: brown;
-  color: #e2e8f0;
+  background: burlywood;
+  color: ivory;
   text-decoration: none;
   flex: 1 1 calc(30% - 10px);
   text-align: center;
@@ -28,7 +29,7 @@ body {
 }
 
 .cell:hover {
-  background: skyblue;
+  font-weight: bold;
 }
 
 @media (max-width: 600px) {
