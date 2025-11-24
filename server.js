@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 const port = 80;
 
-app.use(express.static('public'));
+app.use(express.static('FRONTEND'));
 
 app.get('/hello', (req, res) => {
-  res.send('Hello World!');
+  res.send('Hello World! YES IT WORKS');
 });
 
 app.listen(port, () => {
