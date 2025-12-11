@@ -18,6 +18,10 @@ app.get('/favicon.ico', (req, res) => {
   res.sendFile(__dirname + '/FRONTEND/favicon.ico');
 });
 
+// Computer route
+app.get('/Computers', (req, res) => {
+  res.sendFile('Not available yet');
+});
 
 // Start the server
 app.listen(port, () => {
