@@ -7,24 +7,18 @@ body {
   padding: 50px;
 }
 
-
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  background-color: peru;
-  border-radius: 8px;
-  padding: 30px
+p {
+  font-size: 15px;
+  margin-bottom: 40px;
 }
 
 .cell {
-  background: burlywood;
-  color: ivory;
+  background: red;
+  color: white;
   text-decoration: none;
-  flex: 1 1 calc(30% - 10px);
   text-align: center;
   padding: 20px;
+  margin-bottom: 40px;
   border-radius: 8px;
   transition: background 0.2s;
 }
@@ -33,8 +27,3 @@ body {
   font-weight: bold;
 }
 
-@media (max-width: 600px) {
-  .cell {
-    flex: 1 1 100%;
-  }
-}
