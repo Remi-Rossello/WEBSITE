@@ -20,7 +20,7 @@ app.get('/favicon.ico', (req, res) => {
 
 // Computer route
 app.get('/computers', (req, res) => {
-  res.sendFile('Not available yet');
+  res.send('Not available yet');
 });
 
 // Start the server
