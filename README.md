@@ -22,7 +22,7 @@ Welcome to my website, showcasing projects, publications, and credentials.
 - Tab-based SPA navigation: Home, About, Credentials, Projects
 - Credentials tab with categorized cards (Engineering, Computer Science, Humanities)
 - Credential detail viewer with optional image preview and verification links
-- About tab with switchable CV tracks and embedded PDF preview
+- About tab with an embedded software CV preview
 - Publications viewer with in-app PDF preview, pagination, open/download actions
 - In projects tab: Interactive Standard Model Lagrangian explorer with drill-down term navigation
 - Backend demo action from the frontend (`Call Backend`) hitting `/api/hello`
@@ -101,6 +101,13 @@ npm run test:run
 
 ## Deployment Notes
 
+- When the Railway frontend service uses `frontend` as its root directory, its
+  `frontend/package-lock.json` is separate from the workspace root lockfile so
+  Railway can install dependencies when it receives only the frontend folder.
+  Update both lockfiles when changing frontend dependencies; regenerate the
+  frontend lockfile from an isolated copy of `frontend/package.json`.
+- For the frontend build, install development dependencies as well: Vite is
+  required to build, and the configured start script uses `serve`.
 - Backend is configured to allow:
 	- local frontend (`http://localhost:5173`)
 	- Railway domains (`*.up.railway.app`)
