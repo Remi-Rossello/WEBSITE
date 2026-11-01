@@ -56,18 +56,8 @@ const latestNewsItems = [
   },
 ].sort((leftItem, rightItem) => rightItem.sortDate.localeCompare(leftItem.sortDate));
 
-const aboutCvOptions = [
-  {
-    id: "engineering",
-    label: "Materials & Aerospace CV",
-    pdfUrl: "/assets/docs/Rossello_CV_aerospace.pdf",
-  },
-  {
-    id: "software",
-    label: "Software CV",
-    pdfUrl: "/assets/docs/Rossello_CV_Software.pdf",
-  },
-];
+const aboutCvPdf = "/assets/docs/Rossello_CV_Software_v2.pdf";
+const aboutCvPdfPreview = `${aboutCvPdf}#view=FitH&zoom=page-width&toolbar=0&navpanes=0`;
 
 /**
  * Root frontend component with tab-based navigation.
@@ -98,7 +88,6 @@ function App() {
   const [activeTab, setActiveTab] = useState(initialState.activeTab);
   const [activeProject, setActiveProject] = useState(initialState.activeProject);
   const [activeCertification, setActiveCertification] = useState(false);
-  const [aboutTrack, setAboutTrack] = useState("engineering");
   const isFirstRender = useRef(true);
   const [visits, setVisits] = useState(null);
 
@@ -154,9 +143,6 @@ function App() {
     { id: "certifications", label: "Credentials" },
     { id: "projects", label: "Projects" },
   ];
-  const selectedAboutCv = aboutCvOptions.find((option) => option.id === aboutTrack) || aboutCvOptions[0];
-  const selectedAboutPdf = selectedAboutCv.pdfUrl;
-  const selectedAboutPdfPreview = `${selectedAboutPdf}#view=FitH&zoom=page-width&toolbar=0&navpanes=0`;
   const activeTabLabel = tabs.find((tab) => tab.id === activeTab)?.label || "Home";
 
   useEffect(() => {
@@ -312,41 +298,19 @@ function App() {
               </p>
             </section>
 
-            <div className="about-cv-picker" role="tablist" aria-label="CV selector">
-              {aboutCvOptions.map((option) => (
-                <button
-                  id={`about-cv-${option.id}`}
-                  key={option.id}
-                  className={`about-cv-card ${aboutTrack === option.id ? "is-active" : ""}`}
-                  type="button"
-                  onClick={() => setAboutTrack(option.id)}
-                  role="tab"
-                  aria-selected={aboutTrack === option.id}
-                  aria-controls="about-cv-panel"
-                >
-                  <span className="about-cv-card-title">{option.label}</span>
-                </button>
-              ))}
-            </div>
-
-            <div
-              className="about-pdf-viewer"
-              id="about-cv-panel"
-              role="tabpanel"
-              aria-labelledby={`about-cv-${aboutTrack}`}
-            >
+            <div className="about-pdf-viewer">
               <div className="about-pdf-head">
-                <p className="about-pdf-title">{selectedAboutCv.label}</p>
+                <p className="about-pdf-title">Software CV</p>
                 <div className="about-pdf-actions">
-                  <a className="button button-secondary" href={selectedAboutPdf} target="_blank" rel="noreferrer">
+                  <a className="button button-secondary" href={aboutCvPdf} target="_blank" rel="noreferrer">
                     Open
                   </a>
-                  <a className="button button-secondary" href={selectedAboutPdf} download>
+                  <a className="button button-secondary" href={aboutCvPdf} download>
                     Download
                   </a>
                 </div>
               </div>
-              <embed className="pdf-frame about-pdf-frame" src={selectedAboutPdfPreview} type="application/pdf" />
+              <embed className="pdf-frame about-pdf-frame" src={aboutCvPdfPreview} type="application/pdf" />
             </div>
           </section>
         )}

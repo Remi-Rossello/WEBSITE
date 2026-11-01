@@ -257,7 +257,6 @@ a:focus-visible,
 .social-link:focus-visible,
 .theme-toggle:focus-visible,
 .home-panel-card:focus-visible,
-.about-cv-card:focus-visible,
 .project-entry-button:focus-visible,
 .project-expression-button:focus-visible,
 .project-back-button:focus-visible,
@@ -876,50 +875,6 @@ h1 {
   border-color: rgba(127, 183, 255, 0.75);
   background: rgba(127, 183, 255, 0.2);
   color: var(--text-main);
-}
-
-.about-cv-picker {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.7rem;
-  margin-bottom: 0.85rem;
-}
-
-.about-cv-card {
-  appearance: none;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--surface-alt);
-  color: var(--text-main);
-  cursor: pointer;
-  text-align: left;
-  padding: 0.68rem 0.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.16rem;
-  transition: border-color 0.16s ease, background 0.16s ease, transform 0.16s ease;
-}
-
-.about-cv-card:hover {
-  border-color: var(--border-strong);
-  transform: translateY(-1px);
-}
-
-.about-cv-card.is-active {
-  border-color: rgba(127, 183, 255, 0.72);
-  background: rgba(127, 183, 255, 0.14);
-}
-
-.about-cv-card-title {
-  font-size: 0.85rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.about-cv-card-subtitle {
-  font-size: 0.8rem;
-  color: var(--text-soft-strong);
 }
 
 .about-pdf-viewer {
@@ -1656,7 +1611,6 @@ h1 {
 }
 
 :root[data-theme="light"] .home-panel-card,
-:root[data-theme="light"] .about-cv-card,
 :root[data-theme="light"] .about-pdf-viewer,
 :root[data-theme="light"] .about-card,
 :root[data-theme="light"] .about-section,
@@ -1877,10 +1831,6 @@ h1 {
 
   .about-head {
     align-items: flex-start;
-  }
-
-  .about-cv-picker {
-    grid-template-columns: 1fr;
   }
 
   .about-pdf-head {
