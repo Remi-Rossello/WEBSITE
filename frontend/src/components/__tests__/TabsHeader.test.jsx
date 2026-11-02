@@ -11,6 +11,7 @@ describe("TabsHeader", () => {
   it("renders brand and tabs", () => {
     render(<TabsHeader tabs={tabs} activeTab="home" onTabChange={() => {}} />);
     expect(screen.getByText("Remi Rossello")).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "Rémi Rossello" })).toHaveAttribute("src", "/assets/images/profile-pic.png");
     expect(screen.getByRole("tab", { name: "Home" })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: "Projects" })).toBeInTheDocument();
   });
