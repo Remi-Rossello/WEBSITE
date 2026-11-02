@@ -43,4 +43,12 @@ describe("App", () => {
       `${pdfUrl}#view=FitH&zoom=page-width&toolbar=0&navpanes=0`,
     );
   });
+
+  it("shows the updated About introduction", () => {
+    render(<App />);
+    fireEvent.click(screen.getByRole("tab", { name: "About" }));
+
+    expect(screen.getByText("I'm Rémi Rossello, a software engineer with a background in materials science and engineering, and a graduate of Mines Nancy in France.")).toBeInTheDocument();
+    expect(screen.getByText("Having developed my full-stack skills through independent learning and hands-on experience, I'm looking to pursue my career in software engineering, particularly on projects involving AI, an area in which I've gained practical experience.")).toBeInTheDocument();
+  });
 });

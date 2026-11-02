@@ -259,10 +259,13 @@ function App() {
               <img className="about-profile-pic" src="/assets/images/profile-pic.png" alt="Rémi Rossello profile" />
               <h2 className="about-story-title">Hi.</h2>
               <p className="about-story-text">
-                My name is Rémi Rossello, I come from Vence, a small but beautiful town on the French Riviera. Growing
-                up, I always wanted to know how things works. First, the universe, prompting me
-                to learn a lot about physics and astronomy. Then, computers, leading me to learn all I could about them from logic gates
-                to pixels on the screen, and resulting in this Website.
+                I'm Rémi Rossello, a software engineer with a background in materials science and engineering, and a
+                graduate of Mines Nancy in France.
+              </p>
+              <p className="about-story-text">
+                Having developed my full-stack skills through independent learning and hands-on experience, I'm looking
+                to pursue my career in software engineering, particularly on projects involving AI, an area in which
+                I've gained practical experience.
               </p>
 
               <h2 className="about-story-title">Experiences</h2>
