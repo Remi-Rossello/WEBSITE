@@ -257,7 +257,7 @@ function App() {
             <h1 className="content-title">About</h1>
             <section className="about-story" aria-label="About introduction">
               <img className="about-profile-pic" src="/assets/images/profile-pic.png" alt="Rémi Rossello profile" />
-              <h2 className="about-story-title">Hi.</h2>
+              <h2 className="about-story-title">Hi!</h2>
               <p className="about-story-text">
                 I'm Rémi Rossello, a software engineer with a background in materials science and engineering, and a
                 graduate of Mines Nancy in France.
@@ -268,36 +268,56 @@ function App() {
                 I've gained practical experience.
               </p>
 
-              <h2 className="about-story-title">Experiences</h2>
+              <h2 className="about-story-title">Professional experiences</h2>
               <p className="about-story-text">
-                Following academic training in maths and physics, in 2024, I received my engineering diploma from the "École des
-                Mines" in Nancy, France, with a specialization in materials engineering. 
-                In the same year, I worked as an intern for OffWorld in Luxembourg, a space startup from the US
-                concentrating on the mining of space resources, specifically Lunar water. There, I made use of both
-                materials science and programming skills for ESA-sponsored experiments. 
-                Then, I briefly joined the Cosmochemistry and Planetology team at the Petrological and Geochemical
-                Research Center (CRPG) in Nancy, France, again as in intern. With my tutor Jessica Flahaut and <abbr title="French national space agency">CNES </abbr> 
-                engineer Nicolas Théret, we co-authored a scientific proceeding on the spectral identification of Lunar
-                minerals thanks to scripts I had written in IDL. This paper was presented at the European Lunar Symposium 2025 in Munster, Germany.
-                Today, I am working for Scale AI as a "math expert", writing and correcting math problems for LLM RLHF training.
+                After graduating in 2024, I joined <strong>OffWorld</strong>, a space technology startup based in
+                Luxembourg, where I worked on engineering challenges related to lunar resource extraction. I combined
+                materials science and programming to contribute to ESA-sponsored experiments.
+              </p>
+              <p className="about-story-text">
+                I then joined the <strong>Cosmochemistry and Planetology team at CRPG</strong>, where I developed IDL
+                scripts for the spectral identification of lunar minerals, contributing to scientific work presented
+                at the European Lunar Symposium 2025.
+              </p>
+              <p className="about-story-text">
+                More recently, I worked with <strong>Histia</strong>, an AI startup, developing an agentic system
+                designed to extract structured information from web and local sources. I worked on backend development,
+                automated testing, benchmarking and application integration, using technologies such as Python,
+                FastAPI, PostgreSQL, RabbitMQ, Docker and LLM APIs.
+              </p>
+              <p className="about-story-text">
+                I also work as a <strong>Mathematics Expert at Scale AI</strong>, contributing to the creation and
+                evaluation of mathematical problems for LLM training.
               </p>
 
-              <h2 className="about-story-title">The computer science journey</h2>
+              <h2 className="about-story-title">My Journey into Computer Science</h2>
               <p className="about-story-text">
-                During my years at school, I had learned how to code in Python, Caml, R, MATLAB, IDL... But we were
-                never taught exactly what the computer is <em>doing</em>. And so towards the end of my formation, I
-                sought to understand in detail the mysterious and magical world of computers. 
-                The starting point was NandGames, a game allowing one to build a CPU and RAM, level by level, from
-                transistors, to Nand gates, and then circuits, RAM, ALU, CPU, and finally binary instructions and
-                Assembly scripts running on this home-made computer. 
-                Then, I learned more about real Assembly and C, reading the classic "Operating systems in three easy pieces". Putting
-                this in practice, I installed Linux and experimented. The next chapter was getting certified in real-world skills, like
-                full-stack development, HTML/CSS, JavaScript, TypeScript, React, Node.js, SQL, and even Quantum Computing with the IMB framework.
+                My interest in computing goes beyond writing code. I wanted to understand what actually happens inside
+                a computer.
+              </p>
+              <p className="about-story-text">
+                I started with NandGame, building a computer from scratch, from logic gates and memory circuits to a CPU
+                capable of executing machine instructions. This led me to explore Assembly, C, Linux and operating
+                systems, notably through <em>Operating Systems: Three Easy Pieces</em>.
+              </p>
+              <p className="about-story-text">
+                Alongside my engineering studies, I progressively developed my software skills through hands-on projects
+                and independent learning, exploring Python, JavaScript, TypeScript, React, Node.js, SQL and full-stack
+                development.
+              </p>
+              <p className="about-story-text">
+                I believe that understanding the fundamentals makes you a better engineer, and I enjoy continuously
+                expanding my knowledge through building things.
               </p>
 
-              <h2 className="about-story-title">What's next</h2>
+              <h2 className="about-story-title">What's Next?</h2>
               <p className="about-story-text">
-                I am currently looking for a new job in software engineering. If you are a recruiter, feel free to reach out to me on <a href="https://www.linkedin.com/in/r%C3%A9mi-rossello-9bba2521b/" target="_blank" rel="noreferrer">LinkedIn</a> or by email at <a href="mailto:remi.rossello@gmail.com">remi.rossello@gmail.com</a>.
+                I'm currently looking for new opportunities as a <strong>Software Engineer</strong>, where I can
+                contribute to building useful software, take on challenging technical problems and continue growing
+                alongside an engineering team.
+              </p>
+              <p className="about-story-text">
+                Feel free to reach out via <a href="https://www.linkedin.com/in/remi-rossello/" target="_blank" rel="noreferrer">LinkedIn</a> or email at <a href="mailto:remi.rossello@gmail.com">remi.rossello@gmail.com</a>.
               </p>
             </section>
 
