@@ -1,5 +1,6 @@
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import TabsHeader from "./components/TabsHeader";
+import { featuredProjects } from "./tabs/projects/projectSections";
 
 const LagrangianPanel = lazy(() => import("./projects/lagrangian/LagrangianPanel"));
 const StandardModelExplorerPanel = lazy(() => import("./projects/field-catalog/FieldCatalogPanel"));
@@ -19,14 +20,6 @@ const latestNewsItems = [
     hint: "You are looking at it",
   },
   {
-    id: "visitor-count",
-    title: "Live visitor counter",
-    status: "Available",
-    date: "April 5th 2026",
-    sortDate: "2026-04-05",
-    hint: "Check the bottom of this page",
-  },
-  {
     id: "field-catalog",
     title: "Standard Model Explorer",
     status: "In progress",
@@ -42,7 +35,7 @@ const latestNewsItems = [
   },
   {
     id: "backend-test",
-    title: "Digit recognizer",
+    title: "The Famous Digit AI",
     status: "Available",
     date: "March 12th 2026",
     sortDate: "2026-03-12",
@@ -58,6 +51,8 @@ const latestNewsItems = [
 
 const aboutCvPdf = "/assets/docs/Rossello_CV_Software_v2.pdf";
 const aboutCvPdfPreview = `${aboutCvPdf}#view=FitH&zoom=page-width&toolbar=0&navpanes=0`;
+const TICKER_DEFAULT_SPEED = 32;
+const TICKER_MAX_SPEED = 160;
 
 /**
  * Root frontend component with tab-based navigation.
@@ -140,8 +135,8 @@ function App() {
   const tabs = [
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
-    { id: "certifications", label: "Credentials" },
     { id: "projects", label: "Projects" },
+    { id: "certifications", label: "Certifications" },
   ];
   const activeTabLabel = tabs.find((tab) => tab.id === activeTab)?.label || "Home";
 
@@ -158,7 +153,7 @@ function App() {
   const tickerAnimRef = useRef(null);
   const tickerLastTimeRef = useRef(null);
   const tickerOffsetRef = useRef(0);
-  const tickerSpeedRef = useRef(65); // px/sec, positive = scroll left
+  const tickerSpeedRef = useRef(TICKER_DEFAULT_SPEED); // px/sec, positive = scroll left
 
   useEffect(() => {
     const step = (ts) => {
@@ -182,13 +177,12 @@ function App() {
   const handleTickerMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const pos = (e.clientX - rect.left) / rect.width; // 0 = far left, 1 = far right
-    const MAX_SPEED = 320;
     // pos=0 → fast right (reveal left/older), pos=0.5 → stop, pos=1 → fast left (normal forward)
-    tickerSpeedRef.current = (pos - 0.5) * 2 * MAX_SPEED;
+    tickerSpeedRef.current = (pos - 0.5) * 2 * TICKER_MAX_SPEED;
   };
 
   const handleTickerMouseLeave = () => {
-    tickerSpeedRef.current = 65;
+    tickerSpeedRef.current = TICKER_DEFAULT_SPEED;
     tickerLastTimeRef.current = null;
   };
 
@@ -210,45 +204,36 @@ function App() {
       <section className={`page-content ${activeTab === "home" ? "hero" : ""}`}>
         {activeTab === "home" && (
           <section id="panel-home" role="tabpanel" aria-labelledby="tab-home">
-            <h1 className="about-rainbow-title">Welcome to my website !</h1>
+            <h1 id="home-intro-title" className="content-title">Welcome!</h1>
+            <section className="home-intro" aria-labelledby="home-intro-title">
+              <p>Hi, I'm Rémi Rossello, a software engineer with an engineering background from Mines{"\u00a0"}Nancy. I enjoy building software, exploring AI, and understanding how things work under the hood.</p>
+              <p>Here you'll find a selection of my projects, scientific publications related to computer science, and certifications.</p>
+            </section>
 
-            <div className="home-category-grid">
-              <div className="home-category-card">
-                <img
-                  className="home-category-img"
-                  src="/assets/images/projects/field-catalog.jpg"
-                  alt="Standard Model field diagram"
-                />
-                <span className="home-category-overlay">
-                  <span className="home-category-label">Physics</span>
-                </span>
+            <section className="home-featured" aria-labelledby="home-featured-title">
+              <h2 id="home-featured-title">Featured projects</h2>
+              <div className="home-featured-grid">
+                {featuredProjects.map((project) => (
+                  <button
+                    className="home-featured-card"
+                    key={project.id}
+                    type="button"
+                    onClick={() => openProjectTab(project.id)}
+                  >
+                    <img className="home-featured-img" src={project.imageUrl} alt="" />
+                    <span className="home-featured-status">{project.status}</span>
+                    <span className="home-featured-overlay">
+                      <span className="home-featured-label">{project.title}</span>
+                    </span>
+                  </button>
+                ))}
               </div>
-              <div className="home-category-card">
-                <img
-                  className="home-category-img"
-                  src="/assets/images/projects/digit-recognizer.jpg"
-                  alt="AI digit recognizer"
-                />
-                <span className="home-category-overlay">
-                  <span className="home-category-label">Computers</span>
-                </span>
+              <div className="home-featured-footer">
+                <button className="button button-secondary home-see-projects-btn" type="button" onClick={() => setActiveTab("projects")}>
+                  See all projects →
+                </button>
               </div>
-              <div className="home-category-card">
-                <img
-                  className="home-category-img"
-                  src="/assets/images/projects/spintronics.jpg"
-                  alt="Spintronics spin diagram"
-                />
-                <span className="home-category-overlay">
-                  <span className="home-category-label">Publications</span>
-                </span>
-              </div>
-            </div>
-            <div className="home-category-footer">
-              <button className="button button-secondary home-see-projects-btn" type="button" onClick={() => setActiveTab("projects")}>
-                See all projects →
-              </button>
-            </div>
+            </section>
           </section>
         )}
 
@@ -261,8 +246,6 @@ function App() {
               <p className="about-story-text">
                 I'm Rémi Rossello, a software engineer with a background in materials science and engineering, and a
                 graduate of Mines Nancy in France.
-              </p>
-              <p className="about-story-text">
                 Having developed my full-stack skills through independent learning and hands-on experience, I'm looking
                 to pursue my career in software engineering, particularly on projects involving AI, an area in which
                 I've gained practical experience.
@@ -273,8 +256,6 @@ function App() {
                 After graduating in 2024, I joined <strong>OffWorld</strong>, a space technology startup based in
                 Luxembourg, where I worked on engineering challenges related to lunar resource extraction. I combined
                 materials science and programming to contribute to ESA-sponsored experiments.
-              </p>
-              <p className="about-story-text">
                 I then joined the <strong>Cosmochemistry and Planetology team at CRPG</strong>, where I developed IDL
                 scripts for the spectral identification of lunar minerals, contributing to scientific work presented
                 at the European Lunar Symposium 2025.
@@ -284,8 +265,6 @@ function App() {
                 designed to extract structured information from web and local sources. I worked on backend development,
                 automated testing, benchmarking and application integration, using technologies such as Python,
                 FastAPI, PostgreSQL, RabbitMQ, Docker and LLM APIs.
-              </p>
-              <p className="about-story-text">
                 I also work as a <strong>Mathematics Expert at Scale AI</strong>, contributing to the creation and
                 evaluation of mathematical problems for LLM training.
               </p>
@@ -294,8 +273,6 @@ function App() {
               <p className="about-story-text">
                 My interest in computing goes beyond writing code. I wanted to understand what actually happens inside
                 a computer.
-              </p>
-              <p className="about-story-text">
                 I started with NandGame, building a computer from scratch, from logic gates and memory circuits to a CPU
                 capable of executing machine instructions. This led me to explore Assembly, C, Linux and operating
                 systems, notably through <em>Operating Systems: Three Easy Pieces</em>.
@@ -304,8 +281,6 @@ function App() {
                 Alongside my engineering studies, I progressively developed my software skills through hands-on projects
                 and independent learning, exploring Python, JavaScript, TypeScript, React, Node.js, SQL and full-stack
                 development.
-              </p>
-              <p className="about-story-text">
                 I believe that understanding the fundamentals makes you a better engineer, and I enjoy continuously
                 expanding my knowledge through building things.
               </p>
@@ -400,7 +375,7 @@ function App() {
         )}
 
         {activeTab === "certifications" && (
-          <Suspense fallback={<p className="project-loading">Loading credentials...</p>}>
+          <Suspense fallback={<p className="project-loading">Loading certifications...</p>}>
             <CredentialsTab onDetailChange={setActiveCertification} />
           </Suspense>
         )}
@@ -408,11 +383,10 @@ function App() {
       {activeTab === "home" && (
         <div
           className="news-ticker-wrapper"
-          aria-label="Latest news"
+          aria-label="Timeline"
         >
           <div className="news-ticker-label" aria-hidden="true">
-            <span className="news-ticker-dot" />
-            LATEST
+            TIMELINE
           </div>
           <div
             className="news-ticker-track"
@@ -454,7 +428,7 @@ function App() {
         </div>
       )}
       {!activeProject && !activeCertification && (
-        <footer className="site-footer" aria-live="polite">
+        <footer className="site-footer" aria-live="polite" hidden>
           <span className="button button-secondary" aria-label="Unique visitors">
             {visits ?? "…"} unique browsers have visited this website !
           </span>

@@ -3,14 +3,14 @@ import { certificationItems, linkedInCertificationsUrl } from "./certificationIt
 
 function CredentialsTab() {
   const [selectedCertification, setSelectedCertification] = useState(null);
-  const certificationSections = useMemo(() => ["Engineering", "Computer Science", "Humanities"], []);
+  const certificationSections = useMemo(() => ["Engineering", "Computer Science", "Other Courses"], []);
   const canShowVerificationLink =
     selectedCertification?.credentialUrl && selectedCertification.credentialUrl !== linkedInCertificationsUrl;
   const selectedLinkLabel = selectedCertification?.linkLabel || "Verify credential";
 
   return (
     <>
-      <h1 className="content-title">Credentials</h1>
+      <h1 className="content-title">Certifications</h1>
 
       {selectedCertification ? (
         <div className="certification-viewer">
@@ -79,7 +79,7 @@ function CredentialsTab() {
             return (
               <section className="certifications-section" key={sectionTitle} aria-label={sectionTitle}>
                 <h2 className="certifications-section-title">{sectionTitle}</h2>
-                <div className="certifications-grid" aria-label={`${sectionTitle} credentials`}>
+                <div className="certifications-grid" aria-label={`${sectionTitle} certifications`}>
                   {sectionItems.map((certification) => (
                     <button
                       className="certification-card certification-card-button"

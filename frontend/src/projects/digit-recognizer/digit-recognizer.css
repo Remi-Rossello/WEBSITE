@@ -159,7 +159,7 @@
 
 .backend-architecture-diagram {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.06fr) auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   gap: 0.8rem;
   align-items: stretch;
 }
@@ -237,10 +237,6 @@
   border-top: 2px solid rgba(212, 122, 17, 0.72);
   border-right: 2px solid rgba(212, 122, 17, 0.72);
   transform: translateY(-50%) rotate(45deg);
-}
-
-.backend-architecture-link-model .backend-architecture-link-line {
-  background: linear-gradient(90deg, rgba(212, 122, 17, 0.12), rgba(212, 122, 17, 0.52));
 }
 
 .backend-architecture-link-label {

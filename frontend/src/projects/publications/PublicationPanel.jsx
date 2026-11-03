@@ -9,19 +9,19 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/build/pdf.worker.min.m
 
 const publications = {
   "publication-spintronics": {
-    title: "Spintronics",
+    title: "Spintronics: Intro to DM effect",
     summary:
       "Friendly introduction to the Dzyaloshinkii-Moriya effect, magnetic skyrmions, and potential applications in spintronics. Written in French with co-author Alexandra Lepage.",
     pdfUrl: spintronicsPdf,
   },
   "publication-spectroscopy": {
-    title: "Spectroscopy",
+    title: "Spectroscopy:Raman vs FTIR",
     summary:
       "General overview of two common optical spectroscopy techniques: Raman spectroscopy, and Fourier-transform infrared spectroscopy (FTIR).",
     pdfUrl: spectroscopyPdf,
   },
   "publication-lunar-geology": {
-    title: "Lunar geology",
+    title: "Publication: Spectral Analysis Algorithm",
     summary:
       "In this scientific proceeding published at the European Lunar Symposium 2025 in Munster, Germany, planetary geologist Jessica Flahaut uses my IDL lunar multispectral camera simulation, and automatic mineral classification scripts, to see if useful insights could be extracted with these techniques, and the future CNES lunar rover using them.",
     sourceUrl: "https://zenodo.org/records/15470779",

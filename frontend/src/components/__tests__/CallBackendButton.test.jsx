@@ -3,6 +3,17 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import DigitRecognizerPanel from "../../projects/digit-recognizer/DigitRecognizerPanel";
 
 describe("DigitRecognizerPanel", () => {
+  it("shows only the frontend and backend in the architecture diagram", () => {
+    const { container } = render(<DigitRecognizerPanel />);
+
+    expect(screen.getByRole("heading", { name: "How this demo is wired" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: /frontend sends the digit grid.*runs the ONNX model/i })).toBeInTheDocument();
+    expect(container.querySelectorAll(".backend-architecture-node")).toHaveLength(2);
+    expect(screen.queryByText("Model source")).not.toBeInTheDocument();
+    expect(screen.queryByText(/github-hosted ONNX weights/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/downloads model once/i)).not.toBeInTheDocument();
+  });
+
   it("shows prediction on success", async () => {
     global.fetch = vi.fn().mockResolvedValue({
       ok: true,
@@ -10,6 +21,7 @@ describe("DigitRecognizerPanel", () => {
     });
 
     render(<DigitRecognizerPanel />);
+    expect(screen.getByRole("heading", { name: "The Famous Digit AI" })).toBeInTheDocument();
     fireEvent.pointerDown(screen.getByLabelText("Cell 1"));
     fireEvent.pointerUp(screen.getByLabelText("Cell 1"));
     fireEvent.click(screen.getByRole("button", { name: /predict digit/i }));

@@ -8,7 +8,7 @@ function CredentialsTab({ onDetailChange }) {
     setSelectedCertification(cert);
     onDetailChange?.(cert !== null);
   };
-  const certificationSections = ["Computer Science", "Engineering", "Humanities"];
+  const certificationSections = ["Computer Science", "Engineering", "Other Courses"];
   const canShowVerificationLink =
     selectedCertification?.credentialUrl && selectedCertification.credentialUrl !== linkedInCertificationsUrl;
   const selectedLinkLabel = selectedCertification?.linkLabel || "Link";
@@ -75,14 +75,14 @@ function CredentialsTab({ onDetailChange }) {
         </div>
       ) : certificationItems.length === 0 ? (
         <>
-          <h1 className="content-title">Credentials</h1>
+          <h1 className="content-title">Certifications</h1>
           <p className="subtitle certifications-empty">
             LinkedIn blocks automated extraction here. Share your certification list and I can populate this grid instantly.
           </p>
         </>
       ) : (
         <>
-          <h1 className="content-title">Credentials</h1>
+          <h1 className="content-title">Certifications</h1>
           <div className="certifications-sections">
           {certificationSections.map((sectionTitle) => {
             const sectionItems = certificationItems.filter((certification) => certification.section === sectionTitle);
@@ -93,7 +93,7 @@ function CredentialsTab({ onDetailChange }) {
             return (
               <section className="certifications-section" key={sectionTitle} aria-label={sectionTitle}>
                 <h2 className="certifications-section-title">{sectionTitle}</h2>
-                <div className="certifications-grid" aria-label={`${sectionTitle} credentials`}>
+                <div className="certifications-grid" aria-label={`${sectionTitle} certifications`}>
                   {sectionItems.map((certification) => (
                     <button
                       className="certification-card certification-card-button"

@@ -22,6 +22,7 @@ describe("PublicationPanel", () => {
   it("renders summary and optional source link", () => {
     render(<PublicationPanel publicationId="publication-lunar-geology" />);
 
+    expect(screen.getByRole("heading", { name: "Publication: Spectral Analysis Algorithm" })).toBeInTheDocument();
     expect(screen.getByText(/planetary geologist jessica flahaut/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Open source" })).toBeInTheDocument();
   });

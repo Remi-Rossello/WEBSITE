@@ -76,7 +76,7 @@ export const certificationItems = [
     diplomaImage: "/assets/images/full-stack-certif.png",
   },
   {
-    section: "Humanities",
+    section: "Other Courses",
     title: "IELTS - C1 level",
     issuer: "British Council",
     date: "Issued Jul 2022 · Expires Jul 2024",
@@ -85,7 +85,7 @@ export const certificationItems = [
     credentialUrl: linkedInCertificationsUrl,
   },
   {
-    section: "Humanities",
+    section: "Other Courses",
     title: "Greek and Roman Mythology MOOC",
     issuer: "University of Pennsylvania",
     date: "Issued Jun 2022",
@@ -93,7 +93,7 @@ export const certificationItems = [
     credentialUrl: linkedInCertificationsUrl,
   },
   {
-    section: "Humanities",
+    section: "Other Courses",
     title: "Human Behavioral Biology (2010 Lecture Series)",
     issuer: "Stanford University (Robert Sapolsky)",
     date: "2010",
@@ -102,7 +102,7 @@ export const certificationItems = [
     linkLabel: "Youtube link",
   },
   {
-    section: "Humanities",
+    section: "Other Courses",
     title: "MOOC Gestion de Projet, Attestation session 18 Parcours Classique",
     issuer: "MOOC Gestion de Projet",
     date: "Issued Dec 2021 · Expires Dec 2024",

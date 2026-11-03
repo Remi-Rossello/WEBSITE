@@ -22,7 +22,7 @@ export const projectSections = [
     items: [
       {
         id: "backend-test",
-        title: "Backend Digit recognizer",
+        title: "The Famous Digit AI",
         status: "Available",
         imageUrl: "/assets/images/projects/digit-recognizer.jpg",
       },
@@ -34,7 +34,7 @@ export const projectSections = [
       },
       {
         id: "computer-roadmap",
-        title: "The ultimate computer roadmap",
+        title: "Guide to Computers: From Transistors to Pixels",
         status: "Upcoming",
         imageUrl: "/assets/images/projects/computer-roadmap.jpg",
       },
@@ -45,19 +45,19 @@ export const projectSections = [
     items: [
       {
         id: "publication-lunar-geology",
-        title: "Lunar geology",
+        title: "Publication: Spectral Analysis Algorithm",
         status: "Published",
         imageUrl: "/assets/images/projects/lunar-geology.jpg",
       },
       {
         id: "publication-spintronics",
-        title: "Spintronics",
+        title: "Spintronics: Intro to DM effect",
         status: "Published",
         imageUrl: "/assets/images/projects/spintronics.jpg",
       },
       {
         id: "publication-spectroscopy",
-        title: "Spectroscopy",
+        title: "Spectroscopy:Raman vs FTIR",
         status: "Published",
         imageUrl: "/assets/images/projects/spectroscopy.jpg",
       },

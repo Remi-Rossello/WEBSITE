@@ -118,9 +118,9 @@ function DigitRecognizerPanel({ onBack }) {
   };
 
   return (
-    <section className="project-panel backend-project-panel" aria-label="Digit recognizer demo">
+    <section className="project-panel backend-project-panel" aria-label="The Famous Digit AI">
       <header className="dino-simple-header">
-        <h1 className="content-title dino-content-title">Digit recognizer</h1>
+        <h1 className="content-title dino-content-title">The Famous Digit AI</h1>
       </header>
       <div className="project-detail-toolbar">
         <button className="button button-secondary" type="button" onClick={onBack}>← Go back</button>
@@ -200,12 +200,11 @@ function DigitRecognizerPanel({ onBack }) {
           <p className="dino-eyebrow backend-architecture-eyebrow">Architecture</p>
           <h2 className="backend-architecture-title">How this demo is wired</h2>
           <p className="backend-architecture-copy">
-            The interface runs in the frontend, the prediction request is handled by the Railway backend, and the ONNX
-            model weights are fetched from GitHub before being reused locally for inference.
+            The frontend sends the drawing to the Railway backend, which runs the ONNX model and returns a prediction.
           </p>
         </div>
 
-        <div className="backend-architecture-diagram" role="img" aria-label="Frontend sends the digit grid to the Railway backend, which downloads ONNX model weights from GitHub and returns a prediction to the frontend.">
+        <div className="backend-architecture-diagram" role="img" aria-label="Frontend sends the digit grid to the Railway backend, which runs the ONNX model and returns a prediction to the frontend.">
           <article className="backend-architecture-node">
             <p className="backend-architecture-node-kicker">Frontend</p>
             <h3 className="backend-architecture-node-title">React drawing grid</h3>
@@ -224,19 +223,6 @@ function DigitRecognizerPanel({ onBack }) {
             <h3 className="backend-architecture-node-title">Express + ONNX Runtime</h3>
             <p className="backend-architecture-node-copy">
               Validates the payload, runs inference on the MNIST model, then returns the predicted digit and confidence.
-            </p>
-          </article>
-
-          <div className="backend-architecture-link backend-architecture-link-model" aria-hidden="true">
-            <span className="backend-architecture-link-line" />
-            <span className="backend-architecture-link-label">downloads model once</span>
-          </div>
-
-          <article className="backend-architecture-node">
-            <p className="backend-architecture-node-kicker">Model source</p>
-            <h3 className="backend-architecture-node-title">GitHub-hosted ONNX weights</h3>
-            <p className="backend-architecture-node-copy">
-              The backend pulls <strong>mnist-8.onnx</strong> from GitHub, stores it locally, and reuses it across requests.
             </p>
           </article>
         </div>
